@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="row">
+	<div class="col">
+	  <form method="post" enctype="multipart/form-data">
+	    {% csrf_token %}
+	    <input type="file" name="myfile">
+	    <button type="submit">Upload</button>
+	  </form>
+
+	  	{% if uploaded_file_url %}
+	    <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+
+	    <iframe src="{{ uploaded_file_url }}" type="application/pdf"   height="700px" width="500"></iframe>
+	  {% endif %}
+	</div>
+	<div class="col">
+	</div>
+</div>
+{% endblock %}
