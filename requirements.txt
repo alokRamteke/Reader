@@ -1,0 +1,6 @@
+Django==1.11
+pdfminer.six==20181108
+pycryptodome==3.7.2
+pytz==2018.9
+six==1.12.0
+sortedcontainers==2.1.0

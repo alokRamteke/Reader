@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="row">
-	<div class="col">
+	<div class="col-sm-6">
 	  <form method="post" enctype="multipart/form-data">
 	    {% csrf_token %}
 	    <input type="file" name="myfile">
@@ -17,10 +17,18 @@
 	    <iframe src="{{ uploaded_file_url }}" type="application/pdf"   height="700px" width="500"></iframe>
 	  {% endif %}
 	</div>
-	<div class="col">
-		<iframe>
-		{{html1}}
+	<div class="col-sm-6">
+		<iframe src="{% static 'output.html' %}" height="700px" width="700">
+
 	</iframe>
+
 	</div>
 </div>
+{% endblock %}
+{% block javascript %}
+<!--     <script> 
+    $(function(){
+      $("#includedContent").load("/home/rails/Projects/Alok/pdf_reader/pdf_reader/templates/output.html"); 
+    });
+    </script>  -->
 {% endblock %}
